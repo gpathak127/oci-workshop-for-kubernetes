@@ -21,7 +21,7 @@ cat <<'$EOF' | kubectl create -f -
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: nginx-block-volume
+  name: nginx-block
 spec:
   storageClassName: oci-block-storage
   selector:
@@ -49,7 +49,7 @@ spec:
   volumes:
     - name: nginx
       persistentVolumeClaim:
-        claimName: nginx-block-volume
+        claimName: nginx-block
   containers:
     - name: nginx
       image: nginx
